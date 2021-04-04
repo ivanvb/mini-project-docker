@@ -17,7 +17,7 @@ io = socketio(server);
 io.on("connect", (socket)=> {
     setInterval(() => {
         socket.emit("prueba", {hello: "world"}, function(res){
-            console.log("ack", res);
+            console.log("ack!!", res);
         });
     }, 1000)
 })

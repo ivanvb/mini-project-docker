@@ -3,17 +3,19 @@ services:
     webapp:
         container_name: node-webapp-1
         build: ./webapp
-        restart: always
         environment:
             TEST: 1234
         ports:
             - "3000:3000"
             - "3001:3001"
+        volumes:
+            - .:/webapp
         healthcheck:
             test: ["CMD", "curl", "-f", "http://localhost:3001"]
             interval: 30s
             timeout: 10s
             retries: 10
+        command: yarn --cwd ./webapp/ dev
     
     ml:
         container_name: python-ml-1
