@@ -15,10 +15,8 @@ app.get("/", (req, res)=>{
 io = socketio(server);
 
 io.on("connect", (socket)=> {
-    console.log("Se conecto")
     setInterval(() => {
-        console.log("sending event")
-        socket.emit("prueba", {hello: "byby world"}, function(res){
+        socket.emit("prueba", {hello: "world"}, function(res){
             console.log("ack", res);
         });
     }, 1000)
