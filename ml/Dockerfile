@@ -1,0 +1,6 @@
+FROM python:3.8.9-alpine
+WORKDIR /ml
+COPY requirements.txt ./
+COPY . .
+RUN pip install -r requirements.txt
+CMD ["python", "-u","realtime.py"]
