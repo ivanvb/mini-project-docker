@@ -8,3 +8,13 @@ services:
             - "3001:3001"
         volumes:
             - ./webapp/:/webapp
+            - /webapp/node_modules
+            - /webapp/packages/client/node_modules
+    ml:
+        build:
+            context: ./ml
+            dockerfile: Dockerfile.dev
+        environment:
+            SOCKET_URL: http://webapp:3001
+        volumes:
+            - ./ml:/ml

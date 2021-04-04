@@ -16,7 +16,7 @@ def connect():
 @sio.on("prueba")
 def on_message(data):
     global x
-    print('I received a message!!!!')
+    print('I received a message!!')
 
     x = x+1
-    return f"OK prueba {x}"
+    return f"OK prueba mucho texto {x}"

@@ -5,7 +5,7 @@ const cors = require('cors')
 const app = express();
 
 
-const server = app.listen(3001);
+const server = app.listen(3001, () => console.log("listening on 3001"));
 app.use(cors());
 
 app.get("/", (req, res)=>{
@@ -17,7 +17,7 @@ io = socketio(server);
 io.on("connect", (socket)=> {
     setInterval(() => {
         socket.emit("prueba", {hello: "world"}, function(res){
-            console.log("ack!!", res);
+            console.log("ack!!!", res);
         });
     }, 1000)
 })

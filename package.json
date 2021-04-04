@@ -1,0 +1,23 @@
+{
+  "name": "Dockertest",
+  "version": "1.0.0",
+  "description": "## What is this?",
+  "main": "index.js",
+  "scripts": {
+    "build:dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml build",
+    "build:prod": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml build",
+    "dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up",
+    "prod": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivanvb/mini-project-docker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivanvb/mini-project-docker/issues"
+  },
+  "homepage": "https://github.com/ivanvb/mini-project-docker#readme"
+}

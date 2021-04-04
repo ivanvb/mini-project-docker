@@ -1,0 +1,15 @@
+version: '3'
+services:
+    webapp:
+        environment:
+            TEST: 1234
+            NODE_ENV: production
+        ports:
+            - "3001:${PORT}"
+        command: yarn start
+    ml:
+        build:
+            context: ./ml
+            dockerfile: Dockerfile.prod
+        environment:
+            SOCKET_URL: http://webapp:${PORT}
